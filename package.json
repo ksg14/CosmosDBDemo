@@ -1,0 +1,20 @@
+{
+  "name": "cosmosdb-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "karanjit gill",
+  "license": "ISC",
+  "dependencies": {
+    "azure-storage": "^2.8.1",
+    "body-parser": "^1.18.2",
+    "cassandra-driver": "^3.4.1",
+    "documentdb": "^1.14.2",
+    "express": "^4.16.3",
+    "mongodb": "^2.2.35",
+    "node-uuid": "^1.4.8"
+  }
+}
