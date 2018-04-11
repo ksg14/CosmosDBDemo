@@ -1,0 +1,12 @@
+tr {
+    font-size: 15px;
+}
+
+.logo {
+    color: white !important;
+}
+
+.row {
+    padding: 10px;
+    padding-top: 20px;
+}

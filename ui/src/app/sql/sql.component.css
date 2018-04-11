@@ -1,0 +1,12 @@
+.logo {
+    color: white !important;
+}
+
+.row {
+    padding: 10px;
+    padding-top: 20px;
+}
+
+.table-responsive {
+    max-height:300px;
+}
