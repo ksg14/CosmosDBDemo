@@ -1,0 +1,132 @@
+[
+    {
+        "Customer Details": {
+            "Customer ID": "7",
+            "ADDRESS":"VM towers",
+            "Email":"ksg207@gmail.com",
+            "Phone":"7"
+        },
+
+        "Invoice Details": {
+            "Items" : [
+                { 
+                    "Invoice ID" :"1",
+                    "Invoice Date" :"05/04/2018",
+                    "ItemID":"1",
+                    "Discount" :"0",
+                    "Amount":"10"
+                },
+                { 
+                    "Invoice ID" :"2",
+                    "Invoice Date" :"05/04/2018",
+                    "ItemID":"2",
+                    "Discount" :"0",
+                    "Amount":"8"
+                }
+            ],
+            "Total Amount" : "16"
+        },
+
+        "Products" : [
+            {
+                "sku": "111445LP3",
+                "title": "Dell Inspiron Laptop",
+                "description": "The brand new laptop in the market .....",
+            
+                "manufacture_details": {
+                "model_number": "15x",
+                "release_date": "2017-05-17"
+                },
+            
+                "Product_details": {
+                "weight": 2.5,
+                "Length": 15.4,
+                "width": 10,
+                "Height": 1
+                }
+            },
+            {
+                "sku": "111445LP3",
+                "title": "Lenovo ThinkPad Laptop",
+                "description": "The brand new laptop in the market .....",
+            
+                "manufacture_details": {
+                "model_number": "15x",
+                "release_date": "2017-05-17"
+                },
+            
+                "Product_details": {
+                "weight": 2.5,
+                "Length": 15.4,
+                "width": 10,
+                "Height": 1
+                }
+            }
+        ]       
+    },
+    {
+        "Customer Details": {
+            "Customer ID": "14",
+            "ADDRESS":"VM towers",
+            "Email":"ksg207@live.com",
+            "Phone":"14"
+        },
+
+        "Invoice Details": {
+            "Items" : [
+                { 
+                    "Invoice ID" :"1",
+                    "Invoice Date" :"05/04/2018",
+                    "ItemID":"1",
+                    "Discount" :"0",
+                    "Amount":"10"
+                },
+                { 
+                    "Invoice ID" :"2",
+                    "Invoice Date" :"05/04/2018",
+                    "ItemID":"2",
+                    "Discount" :"0",
+                    "Amount":"8"
+                }
+            ],
+            "Total Amount" : "16"
+        },
+
+        "Products" : [
+            {
+                "sku": "111445LP3",
+                "title": "Dell Inspiron Laptop",
+                "description": "The brand new laptop in the market .....",
+            
+                "manufacture_details": {
+                "model_number": "15x",
+                "release_date": "2017-05-17"
+                },
+            
+                "Product_details": {
+                "weight": 2.5,
+                "Length": 15.4,
+                "width": 10,
+                "Height": 1
+                }
+            },
+            {
+                "sku": "111445LP4",
+                "title": "Lenovo ThinkPad Laptop",
+                "description": "The brand new laptop in the market .....",
+            
+                "manufacture_details": {
+                "model_number": "15x",
+                "release_date": "2017-05-17"
+                },
+            
+                "Product_details": {
+                "weight": 2.5,
+                "Length": 15.4,
+                "width": 10,
+                "Height": 1
+                }
+            }
+        ]       
+    }
+]

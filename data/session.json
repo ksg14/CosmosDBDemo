@@ -1,0 +1,9 @@
+[
+    {
+        "Name" : "XYZ",
+        "Product" : "DELL Inspiration Laptop", 
+        "TransactionType": "Buy", 
+        "Quantity" : 1,
+        "Price" : 84000
+    }
+]

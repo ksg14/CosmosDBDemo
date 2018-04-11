@@ -1,8 +1,5 @@
 # Secrets
-/certs
-/data
 /models
-config.js
 
 # Logs
 logs

@@ -1,0 +1,16 @@
+{
+    "Vertex" : {
+        "Customers" : [
+            {
+                "CustomerID" : 7,
+                "name" : "Karanjit"
+            }
+        ],
+        "Products" : [
+            {
+                "ProductID" : "1",
+                "name" : "Dell"
+            }
+        ]
+    }
+}
