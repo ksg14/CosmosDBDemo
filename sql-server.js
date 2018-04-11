@@ -17,10 +17,18 @@ var config = require ("./config");
 
 // Data
 var products = require ("./data/inventory.json");
+// set NODE_TLS_REJECT_UNAUTHORIZED=0
 
 var sql_db, sqlDbClient;
 
-app.post('/sql/', function (req, res) {
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    next();
+});
+
+app.post('/sql/', function (req, res, next) {
     sql_db.addItem (req.body, (err) => {
         if (err) {
             res.send (JSON.stringify ({'err':'Cannot Add'}));
@@ -31,7 +39,7 @@ app.post('/sql/', function (req, res) {
     });
 });
 
-app.get('/sql/all', function (req, res) {
+app.get('/sql/all', function (req, res, next) {
     sql_db.getAllItems ( (err, data) => {
         if (err) {
             res.send (JSON.stringify ({'err':'Cannot Get'}));
@@ -42,7 +50,7 @@ app.get('/sql/all', function (req, res) {
     } );
 });
 
-app.get('/sql/', function (req, res) {
+app.get('/sql/', function (req, res, next) {
     sql_db.getItem (req.query.productId, (err, data) => {
         if (err) {
             res.send (JSON.stringify ({'err':'Cannot Get'}));
@@ -53,7 +61,7 @@ app.get('/sql/', function (req, res) {
     });
 });
 
-app.put('/sql/', function (req, res) {
+app.put('/sql/', function (req, res, next) {
     sql_db.updateItem (req.body, (err) => {
         if (err) {
             res.send (JSON.stringify ({'err':'Cannot Update'}));
@@ -64,7 +72,7 @@ app.put('/sql/', function (req, res) {
     } );
 });
 
-app.delete('/sql/', function (req, res) {
+app.delete('/sql/', function (req, res, next) {
     sql_db.removeItem (req.query.productId, (err) => {
         if (err) {
             res.send (JSON.stringify ({'err':'Cannot Delete'}));
@@ -76,7 +84,7 @@ app.delete('/sql/', function (req, res) {
 });
 
 
-var server = app.listen(4200, function () {
+var server = app.listen(config.sql.port, function () {
     var host = server.address().address;
     var port = server.address().port;
 
@@ -84,7 +92,7 @@ var server = app.listen(4200, function () {
         masterKey: config.sql.primaryKey
     });
 
-    sql_db = new TaskDao (sqlDbClient, "Inventory", "Products");
+    sql_db = new TaskDao (sqlDbClient, config.sql.db, config.sql.col);
 
     sql_db.init ( (err) => {
         if (err) {

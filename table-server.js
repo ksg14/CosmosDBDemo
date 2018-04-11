@@ -21,9 +21,18 @@ var session = require ('./data/session.json');
 
 var table;
 
-app.post('/table/', function (req, res) {
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+    next();
+});
+  
+
+app.post('/table/', function (req, res, next) {
     table.addItem (req.body, (err) => {
         if (err) {
+            console.log (err);
             res.send (JSON.stringify ({'err':'Cannot Add'}));
         }
         else {
@@ -32,9 +41,10 @@ app.post('/table/', function (req, res) {
     });
 });
 
-app.get('/table/all', function (req, res) {
+app.get('/table/all', function (req, res, next) {
     table.findAll ( (err, data) => {
         if (err) {
+            console.log (err);
             res.send (JSON.stringify ({'err':'Cannot Get'}));
         }
         else {
@@ -43,9 +53,10 @@ app.get('/table/all', function (req, res) {
     });
 });
 
-app.get('/table/', function (req, res) {
+app.get('/table/', function (req, res, next) {
     table.find (req.query.row, (err, data) => {
         if (err) {
+            console.log (err);
             res.send (JSON.stringify ({'err':'Cannot Get'}));
         }
         else {
@@ -56,7 +67,7 @@ app.get('/table/', function (req, res) {
 
 
 
-var server = app.listen(4200, function () {
+var server = app.listen(config.table.port, function () {
     var host = server.address().address;
     var port = server.address().port;
 

@@ -47,6 +47,8 @@ TaskDao.prototype = {
 
   addItem: function(item, callback) {
     var self = this;
+    item.Quantity = parseInt (item.Quantity);
+    item.Price = parseInt (item.Price);
 
     self.client.createDocument(self.collection._self, item, function(err, doc) {
       if (err) {
@@ -66,8 +68,8 @@ TaskDao.prototype = {
       } else {
         // Update Document attributes
         doc.ProductName = item.ProductName;
-        doc.Quantity = item.Quantity;
-        doc.Price = item.Price;
+        doc.Quantity = parseInt (item.Quantity);
+        doc.Price = parseInt (item.Price);
 
         self.client.replaceDocument(doc._self, doc, function(err, replaced) {
           if (err) {
